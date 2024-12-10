@@ -36,8 +36,8 @@ public class MountainInformationService implements IMountainInformationService {
 
     @Override
     public MountainInformationEntity create(MountainInformationRequest request) {
-        HttpServletRequest httpServletRequest = getCurrentHttpRequest();
-        LOG.debug("Process request for endpoint: {} with payload: {}, at: {}", httpServletRequest.getRequestURI(), request, LocalDateTime.now());
+//        HttpServletRequest httpServletRequest = getCurrentHttpRequest();
+//        LOG.debug("Process request for endpoint: {} with payload: {}, at: {}", httpServletRequest.getRequestURI(), request, LocalDateTime.now());
 
         validateRequest(request);
 
@@ -50,8 +50,8 @@ public class MountainInformationService implements IMountainInformationService {
 
     @Override
     public MountainInformationResponse get(Long id) {
-        HttpServletRequest httpServletRequest = getCurrentHttpRequest();
-        LOG.debug("Process request for endpoint: {} with id: {}, at: {}", httpServletRequest.getRequestURI(), id, LocalDateTime.now());
+//        HttpServletRequest httpServletRequest = getCurrentHttpRequest();
+//        LOG.debug("Process request for endpoint: {} with id: {}, at: {}", httpServletRequest.getRequestURI(), id, LocalDateTime.now());
 
         MountainInformationEntity fromDB = findById(id);
         return mapperToDTO(fromDB);
@@ -63,8 +63,8 @@ public class MountainInformationService implements IMountainInformationService {
      */
     @Override
     public List<MountainInformationResponse> getMountainInformations() {
-        HttpServletRequest httpServletRequest = getCurrentHttpRequest();
-        LOG.debug("Process request for endpoint: {} at: {}", httpServletRequest.getRequestURI(), LocalDateTime.now());
+//        HttpServletRequest httpServletRequest = getCurrentHttpRequest();
+//        LOG.debug("Process request for endpoint: {} at: {}", httpServletRequest.getRequestURI(), LocalDateTime.now());
 
         List<MountainInformationEntity> findAll = repository.
                 findAll().stream()
@@ -76,8 +76,8 @@ public class MountainInformationService implements IMountainInformationService {
 
     @Override
     public MountainInformationEntity update(MountainInformationRequest request) {
-        HttpServletRequest httpServletRequest = getCurrentHttpRequest();
-        LOG.debug("Process request for endpoint: {} with payload: {}, at: {}", httpServletRequest.getRequestURI(), request, LocalDateTime.now());
+//        HttpServletRequest httpServletRequest = getCurrentHttpRequest();
+//        LOG.debug("Process request for endpoint: {} with payload: {}, at: {}", httpServletRequest.getRequestURI(), request, LocalDateTime.now());
 
         MountainInformationEntity entity = findById(request);
 
@@ -92,8 +92,8 @@ public class MountainInformationService implements IMountainInformationService {
 
     @Override
     public String delete(Long id) {
-        HttpServletRequest httpServletRequest = getCurrentHttpRequest();
-        LOG.debug("Process request for endpoint: {} with id: {}, at: {}", httpServletRequest.getRequestURI(), id, LocalDateTime.now());
+//        HttpServletRequest httpServletRequest = getCurrentHttpRequest();
+//        LOG.debug("Process request for endpoint: {} with id: {}, at: {}", httpServletRequest.getRequestURI(), id, LocalDateTime.now());
 
         MountainInformationEntity entity = findById(id);
         repository.delete(entity);
